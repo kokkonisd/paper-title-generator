@@ -71,6 +71,7 @@ function generatePaperTitle() {
 
     // Erase citation (if any exists).
     document.getElementById("citation").innerHTML = "";
+    document.getElementById("citation").style.display = "none";
     // Set title.
     document.getElementById("paper-title").innerHTML = title;
 }
@@ -259,6 +260,7 @@ function citePaper() {
     ].join("\n");
 
     document.getElementById("citation").innerHTML = bibtex;
+    document.getElementById("citation").style.display = "block";
 }
 
 function initialize() {
