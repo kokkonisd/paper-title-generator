@@ -26,4 +26,5 @@ strange
 strong
 strongly-connected
 symbolic
+synthetic
 tall
