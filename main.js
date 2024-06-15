@@ -1,13 +1,13 @@
 import * as utils from "./utils.js";
 
 // Load data.
-const NOUNS = utils.loadData("./data/nouns.txt");
-const ADJECTIVES = utils.loadData("./data/adjectives.txt");
-const VERBS = utils.loadData("./data/verbs.txt");
-const ADVERBS = utils.loadData("./data/adverbs.txt");
-const NAMES = utils.loadData("./data/names.txt");
-const MONTHS = utils.loadData("./data/months.txt");
-const CITIES = utils.loadData("./data/cities.txt");
+const NOUNS = await utils.loadData("./data/nouns.txt");
+const ADJECTIVES = await utils.loadData("./data/adjectives.txt");
+const VERBS = await utils.loadData("./data/verbs.txt");
+const ADVERBS = await utils.loadData("./data/adverbs.txt");
+const NAMES = await utils.loadData("./data/names.txt");
+const MONTHS = await utils.loadData("./data/months.txt");
+const CITIES = await utils.loadData("./data/cities.txt");
 
 // The available paper title generator functions.
 const PAPER_TITLE_GENERATORS = [
@@ -261,12 +261,19 @@ function citePaper() {
     document.getElementById("citation").innerHTML = bibtex;
 }
 
-
-document.addEventListener("DOMContentLoaded", function (event) {
+function initialize() {
     // Add listeners for buttons.
     document.getElementById("generate-btn").addEventListener("click", generatePaperTitle);
     document.getElementById("cite-btn").addEventListener("click", citePaper);
 
     // Generate a title to start with.
     generatePaperTitle();
-});
+}
+
+if (document.readyState !== "loading") {
+    initialize();
+} else {
+    document.addEventListener("DOMContentLoaded", function () {
+        initialize();
+    });
+}

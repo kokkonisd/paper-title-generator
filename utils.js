@@ -1,10 +1,26 @@
 // Load data from a local JSON file.
 export function loadData(file) {
-    let request = new XMLHttpRequest();
-    request.open("GET", file, false);
-    request.send(null);
-
-    return request.responseText.split("\n").filter((data) => data != "");
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", file);
+        xhr.onload = (e) => {
+            if (xhr.status === 200) {
+                resolve(xhr.responseText.split("\n").filter((data) => data != ""));
+            } else {
+                reject({
+                    status: xhr.status,
+                    statusText: xhr.statusText,
+                });
+            }
+        };
+        xhr.onerror = (e) => {
+            reject({
+                status: xhr.status,
+                statusText: xhr.statusText,
+            });
+        };
+        xhr.send();
+    });
 }
 
 // Get a random element from an array.
