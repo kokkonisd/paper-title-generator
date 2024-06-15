@@ -4,7 +4,7 @@ export function loadData(file) {
     request.open("GET", file, false);
     request.send(null);
 
-    return request.responseText.split("\n");
+    return request.responseText.split("\n").filter((data) => data != "");
 }
 
 // Get a random element from an array.
