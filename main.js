@@ -1,13 +1,13 @@
 import * as utils from "./utils.js";
 
 // Load data.
-const NOUNS = utils.loadData("./data/nouns.json");
-const ADJECTIVES = utils.loadData("./data/adjectives.json");
-const VERBS = utils.loadData("./data/verbs.json");
-const ADVERBS = utils.loadData("./data/adverbs.json");
-const NAMES = utils.loadData("./data/names.json");
-const MONTHS = utils.loadData("./data/months.json");
-const CITIES = utils.loadData("./data/cities.json");
+const NOUNS = utils.loadData("./data/nouns.txt");
+const ADJECTIVES = utils.loadData("./data/adjectives.txt");
+const VERBS = utils.loadData("./data/verbs.txt");
+const ADVERBS = utils.loadData("./data/adverbs.txt");
+const NAMES = utils.loadData("./data/names.txt");
+const MONTHS = utils.loadData("./data/months.txt");
+const CITIES = utils.loadData("./data/cities.txt");
 
 // The available paper title generator functions.
 const PAPER_TITLE_GENERATORS = [
