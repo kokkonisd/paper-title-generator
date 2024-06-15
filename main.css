@@ -1,0 +1,68 @@
+/* From: https://github.com/dreampulse/computer-modern-web-font */
+@import url("https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css");
+
+body {
+    font-family: "Computer Modern Serif", serif;
+}
+
+h1, main {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 18pt;
+}
+
+#paper-title {
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: rgb(220, 220, 220);
+    box-shadow: 0px 4px 0px rgb(200, 200, 200);
+    font-size: 20pt;
+    font-weight: bold;
+    width: 40pt;
+    height: 40pt;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 0px rgb(200, 200, 200);
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: inset 2px 6px 0px rgb(200, 200, 200);
+}
+
+#citation {
+    font-family: "Computer Modern Typewriter";
+    text-align: left;
+    width: fit-content;
+    max-width: 100%;
+    height: 15em;
+    overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgb(240, 240, 240);
+}
+
+footer {
+    margin-top: 50px;
+    margin-left: 10px;
+    position: relative;
+    bottom: 1em;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
