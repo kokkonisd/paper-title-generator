@@ -46,6 +46,7 @@ button:active {
 }
 
 #citation {
+    display: none;
     padding: 10px;
     font-family: "Computer Modern Typewriter";
     text-align: left;
