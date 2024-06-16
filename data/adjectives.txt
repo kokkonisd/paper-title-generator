@@ -1,5 +1,7 @@
+abstract
 adversarial
 big
+blackbox
 complete
 compressed
 concolic
@@ -10,6 +12,7 @@ dynamic
 eco-friendly
 fast
 funny
+graybox
 hilarious
 introspective
 just-in-time
@@ -28,3 +31,4 @@ strongly-connected
 symbolic
 synthetic
 tall
+whitebox

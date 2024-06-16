@@ -6,6 +6,7 @@ box
 burger
 cat
 compiler
+constraint
 data
 dog
 engine
@@ -20,6 +21,7 @@ machine
 malware
 man
 network
+object
 pass
 pony
 prototype
