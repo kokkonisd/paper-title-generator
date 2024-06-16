@@ -9,6 +9,7 @@ compiler
 constraint
 data
 dog
+doohickey
 engine
 execution
 exploration
@@ -30,6 +31,7 @@ segment
 shed
 spoon
 stuff
+thingamajig
 tool
 toy
 vulnerability
