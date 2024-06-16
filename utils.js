@@ -33,11 +33,17 @@ export function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-// Add the -ing ending to a verb (approximatively).
-export function getIngVerb(verb) {
-    if (verb[verb.length - 1] == "e") {
-        verb = verb.slice(0, verb.length - 1);
+// Check if a letter is a vowel.
+export function isVowel(letter) {
+    switch (letter.charAt(0).toLowerCase()) {
+        case "a":
+        case "e":
+        case "i":
+        case "o":
+        case "u":
+        case "y":
+            return true;
+        default:
+            return false;
     }
-
-    return `${verb}ing`;
 }

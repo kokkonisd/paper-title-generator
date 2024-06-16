@@ -4,6 +4,7 @@ import * as utils from "./utils.js";
 const NOUNS = await utils.loadData("./data/nouns.txt");
 const ADJECTIVES = await utils.loadData("./data/adjectives.txt");
 const VERBS = await utils.loadData("./data/verbs.txt");
+const VERBS_ING = await utils.loadData("./data/verbs_ing.txt");
 const ADVERBS = await utils.loadData("./data/adverbs.txt");
 const NAMES = await utils.loadData("./data/names.txt");
 const MONTHS = await utils.loadData("./data/months.txt");
@@ -11,11 +12,11 @@ const CITIES = await utils.loadData("./data/cities.txt");
 
 // The available paper title generator functions.
 const PAPER_TITLE_GENERATORS = [
-    acronymTitle,
-    timeToTitle,
+    // acronymTitle,
+    // timeToTitle,
     towardsTitle,
-    aTitle,
-    studyTitle,
+    // aTitle,
+    // studyTitle,
 ];
 
 // Tracks the currently generated paper (to populate the bibtex citation).
@@ -141,7 +142,7 @@ function towardsTitle() {
 
     let title = "Towards ";
 
-    title += utils.capitalizeFirstLetter(utils.getIngVerb(utils.getRandomElement(VERBS))) + " ";
+    title += utils.capitalizeFirstLetter(utils.getRandomElement(VERBS_ING)) + " ";
 
     if (Math.random() > 0.5) {
         title += [...Array(Math.floor(Math.random() * maxAdjectives) + 1)].map(
@@ -172,17 +173,10 @@ function aTitle() {
     }
     title += utils.capitalizeFirstLetter(utils.getRandomElement(NOUNS)) + " ";
 
-    switch (title.charAt(0)) {
-        case 'A':
-        case 'E':
-        case 'I':
-        case 'O':
-        case 'U':
-            title = `An ${title}`;
-            break;
-        default:
-            title = `A ${title}`;
-            break;
+    if (utils.isVowel(title.charAt(0))) {
+        title = `An ${title}`;
+    } else {
+        title = `A ${title}`;
     }
 
     title += "to ";
