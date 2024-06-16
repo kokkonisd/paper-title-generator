@@ -12,11 +12,11 @@ const CITIES = await utils.loadData("./data/cities.txt");
 
 // The available paper title generator functions.
 const PAPER_TITLE_GENERATORS = [
-    // acronymTitle,
-    // timeToTitle,
+    acronymTitle,
+    timeToTitle,
     towardsTitle,
-    // aTitle,
-    // studyTitle,
+    aTitle,
+    studyTitle,
 ];
 
 // Tracks the currently generated paper (to populate the bibtex citation).
