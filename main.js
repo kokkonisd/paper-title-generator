@@ -240,7 +240,7 @@ function studyTitle() {
 function citePaper() {
     const bibtex = [
         `@inproceedings{${CURRENT_PAPER.key},`,
-        `  title        = {${CURRENT_PAPER.title}},`,
+        `  title        = {{${CURRENT_PAPER.title}}},`,
         `  author       = {${CURRENT_PAPER.authors}},`,
         `  year         = ${CURRENT_PAPER.year},`,
         `  month        = {${CURRENT_PAPER.month}},`,
