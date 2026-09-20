@@ -32,4 +32,5 @@ strongly-connected
 symbolic
 synthetic
 tall
+vibecoded
 whitebox

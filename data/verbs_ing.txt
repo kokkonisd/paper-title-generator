@@ -1,3 +1,4 @@
+analyzing
 acting on
 comprehending
 counting
@@ -21,5 +22,7 @@ redefining
 rethinking
 rewriting
 synthesizing
+transforming
 understanding
 untangling
+vibecoding

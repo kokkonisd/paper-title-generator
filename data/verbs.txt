@@ -21,5 +21,7 @@ redefine
 rethink
 rewrite
 synthesize
+transform
 understand
 untangle
+vibecode
