@@ -17,6 +17,7 @@ const PAPER_TITLE_GENERATORS = [
     towardsTitle,
     aTitle,
     studyTitle,
+    meetsTitle,
 ];
 
 // Tracks the currently generated paper (to populate the bibtex citation).
@@ -233,6 +234,29 @@ function studyTitle() {
     title += utils.capitalizeFirstLetter(utils.getRandomElement(NOUNS));
 
     return title;
+}
+
+// Generate a "meets" title.
+//
+// Example: "Malware Meets Hilarious Prototype: Provable Burger, Static Stuff, and Doohickey"
+function meetsTitle() {
+    function chunk() {
+        let result = "";
+        if (Math.random() > 0.5) {
+            result += utils.capitalizeFirstLetter(utils.getRandomElement(ADJECTIVES)) + " ";
+        }
+        return result + utils.capitalizeFirstLetter(utils.getRandomElement(NOUNS));
+    }
+
+    return [
+        chunk(),
+        "Meets",
+        chunk() + ":",
+        chunk() + ",",
+        chunk() + ",",
+        "and",
+        chunk(),
+    ].join(" ");
 }
 
 
