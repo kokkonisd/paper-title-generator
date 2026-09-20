@@ -18,6 +18,7 @@ const PAPER_TITLE_GENERATORS = [
     aTitle,
     studyTitle,
     meetsTitle,
+    sameMoreTitle,
 ];
 
 // Tracks the currently generated paper (to populate the bibtex citation).
@@ -257,6 +258,22 @@ function meetsTitle() {
         "and",
         chunk(),
     ].join(" ");
+}
+
+// Generate a "Same _, More _" title.
+//
+// Example: "Same Fuzzer, More Object: Towards Operating Doohickey"
+function sameMoreTitle() {
+    let firstNoun = utils.capitalizeFirstLetter(utils.getRandomElement(NOUNS));
+    let secondNoun = utils.capitalizeFirstLetter(utils.getRandomElement(NOUNS));
+    let body = towardsTitle()
+
+    if (Math.random() > 0.2) {
+        // Remove the leading "Towards".
+        body = body.split(" ").slice(1).join(" ");
+    }
+
+    return `Same ${firstNoun}, More ${secondNoun}: ${body}`;
 }
 
 
